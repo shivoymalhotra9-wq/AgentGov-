@@ -1,0 +1,7 @@
+agentgov-red-team-oci-terminology.pdf
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+.DS_Store

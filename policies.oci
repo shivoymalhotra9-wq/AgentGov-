@@ -1,0 +1,5 @@
+# AgentGov policies - Day 1, real OCI IAM policy syntax
+# Allow group <group> to <verb> <resource> in compartment <compartment>
+Allow group infra-drafters to manage drafts in compartment Drafts
+Allow group security-auditors to read drafts in compartment Drafts
+Allow group security-auditors to manage audit-results in compartment Audit-Results

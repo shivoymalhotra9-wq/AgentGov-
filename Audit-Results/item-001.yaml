@@ -1,0 +1,12 @@
+item: ITEM-001
+draft: Drafts/item-001.tf
+drafted_by: infra-drafter
+audited_by: security-auditor
+verdict: PASS
+impact: LOW
+status: AUDIT_PASSED
+checks:
+  - private_vcn: pass
+  - private_subnet_no_public_ip: pass
+  - no_public_ingress: pass
+notes: Internal VCN only, no public exposure, no production change in this draft.
