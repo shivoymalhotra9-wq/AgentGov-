@@ -1,5 +1,5 @@
-# AgentGov agent registry - Day 1
-# Two agents only. No admin agent. Deployer comes later.
+# AgentGov agent registry - Day 1 fix
+# Three agents only. No admin agent. No agent deploys to Production.
 agents:
   - id: infra-drafter
     group: infra-drafters
@@ -22,4 +22,18 @@ agents:
     can_never:
       - write_draft
       - write_production
+      - change_policy
+  - id: infra-deployer-nonprod
+    group: infra-deployers-nonprod
+    owner: Shivoy Malhotra
+    status: active
+    risk_tier: medium
+    capability: DEPLOY_WRITE
+    compartment_write: Non-Production
+    compartment_read: Drafts
+    can_never:
+      - write_draft
+      - write_production
+      - audit
+      - approve
       - change_policy

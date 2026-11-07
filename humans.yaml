@@ -1,0 +1,39 @@
+# AgentGov human roles - Day 1 fix
+# One human for now: Shivoy Malhotra, holding four separate roles.
+# Each action is logged under the role used, not just under his name.
+humans:
+  - name: Shivoy Malhotra
+    status: active
+    roles:
+      - role: approver
+        group: approvers
+        capability: APPROVE
+        can_never:
+          - draft
+          - deploy
+      - role: prod-deployer
+        group: prod-deployers
+        capability: DEPLOY_WRITE
+        compartment_write: Production
+        can_never:
+          - draft
+          - audit
+          - change_policy
+      - role: platform-admin
+        group: platform-admins
+        capability: REGISTRY_ADMIN
+        access: PAM just-in-time only
+        can_never:
+          - draft
+          - audit
+          - approve
+          - deploy
+      - role: break-glass
+        group: break-glass
+        capability: EMERGENCY_PLATFORM
+        access: emergency only, when federation is broken
+        can_never:
+          - draft
+          - audit
+          - approve
+          - deploy
